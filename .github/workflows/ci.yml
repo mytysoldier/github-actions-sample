@@ -5,6 +5,10 @@ jobs:
   unit-test:
     name: Unit Test
     runs-on: ubuntu-18.04
+    defaults:
+      run:
+        shell: python
+        working-directory: /tmp
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
