@@ -9,6 +9,9 @@ jobs:
     name: Unit Test
     runs-on: ubuntu-18.04
     steps:
+      - env:
+          DEBUG: true
+        run: echo ${DEBUG}
       - name: Checkout
         uses: actions/checkout@v2.0.0
       
