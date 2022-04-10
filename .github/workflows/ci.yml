@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "**.js"
+      - "**.yml"
 
 env:
   DEBUG: true
