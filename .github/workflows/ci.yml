@@ -1,5 +1,8 @@
 name: Continuous Integration
-on: push
+on:
+  push:
+    paths:
+      - "**.js"
 
 env:
   DEBUG: true
