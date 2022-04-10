@@ -9,6 +9,7 @@ jobs:
     name: Unit Test
     runs-on: ubuntu-18.04
     steps:
+      - run: echo "${{ secrets.TEST }}"
       - env:
           DEBUG: true
         run: |
