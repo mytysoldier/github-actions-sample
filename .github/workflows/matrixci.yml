@@ -5,8 +5,10 @@ jobs:
   unit-test:
     name: Unit Test
     strategy:
+      fail-fast: true
+      max-parallel: 2
       matrix:
-        os: [ubuntu-18.04m, windows-latest, macos-latest]
+        os: [ubuntu-18.04, windows-latest, macos-latest]
         node: [10, 12]
         exclude:
           - os: windows-latest
