@@ -3,7 +3,6 @@ on: push
 
 jobs:
   unit-test:
-    if: github.ref == 'refs/heads/master'
     name: Unit Test
     strategy:
       fail-fast: true
@@ -16,6 +15,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 5
     steps:
+      - if: github.event_name == 'pull_request'
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Set Env
