@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Context
-        run: echo "${{ toJson(github) }}"
+        run: echo ${{ fromJson('{"greeting":"Hello, World!"}').greeting }}
