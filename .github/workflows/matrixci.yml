@@ -10,7 +10,6 @@ jobs:
         node: [10, 12]
         exclude:
           - os: windows-latest
-            node: [10, 12]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 5
     steps:
