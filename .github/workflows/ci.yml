@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Echo Issue List
         run: |
-          curl -request GET --url https//api.github.com/repos/${{ github.repository }}/issues \
+          curl -request GET --url https://api.github.com/repos/${{ github.repository }}/issues \
           --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}'
       - name: Checkout
         uses: actions/checkout@v2.0.0
