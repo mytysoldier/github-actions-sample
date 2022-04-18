@@ -1,16 +1,14 @@
 name: Continuous Integration
-on: [push, pull_request]
-
-env:
-  DEBUG: true
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   unit-test:
     name: Unit Test
     runs-on: ubuntu-18.04
     timeout-minutes: 5
-    env:
-      DEBUG: true
     steps:
       - name: Echo Issue List
         run: |
