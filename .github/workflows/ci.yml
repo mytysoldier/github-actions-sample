@@ -6,9 +6,9 @@ jobs:
     name: Unit Test
     runs-on: ubuntu-18.04
     timeout-minutes: 5
-    continue-on-error: true
     steps:
       - run: exit 1
+        continue-on-error: true
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Set Env
