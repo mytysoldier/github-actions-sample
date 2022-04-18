@@ -18,6 +18,11 @@ jobs:
         run: |
           npm ci
           npm test
+      - name: Python Shell
+        run: |
+          import sys
+          print(sys.version)
+        shell: python
   lint:
     name: Lint
     runs-on: ubuntu-18.04
