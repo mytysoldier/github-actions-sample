@@ -1,9 +1,0 @@
-name: Continuous Integration
-on: push
-
-jobs:
-  job1:
-    runs-on: ubuntu-18.04
-    steps:
-      - name: Context
-        run: echo ${{ fromJson('{"greeting":"Hello, World!"}').greeting }}

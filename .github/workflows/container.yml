@@ -1,0 +1,15 @@
+name: Continuous Integration
+on: push
+
+jobs:
+  job1:
+    runs-on: ubuntu-18.04
+    container:
+      image: node:12.14.1-stretch
+      env:
+        NODE_ENV: development
+      ports:
+        - 8080
+    steps:
+      - name: Console Log
+        run: console.log('test')
