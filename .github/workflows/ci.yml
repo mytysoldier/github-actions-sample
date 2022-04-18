@@ -5,7 +5,10 @@ jobs:
   unit-test:
     name: Unit Test
     runs-on: ubuntu-18.04
+    timeout-minutes: 5
+    continue-on-error: true
     steps:
+      - run: exit 1
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Set Env
@@ -18,14 +21,10 @@ jobs:
         run: |
           npm ci
           npm test
-      - name: Python Shell
-        run: |
-          import sys
-          print(sys.version)
-        shell: python
   lint:
     name: Lint
     runs-on: ubuntu-18.04
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v2.0.0
