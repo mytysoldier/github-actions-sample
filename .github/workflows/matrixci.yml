@@ -8,6 +8,10 @@ jobs:
       matrix:
         os: [ubuntu-18.04m, windows-latest, macos-latest]
         node: [10, 12]
+        include:
+          - os: windows-latest
+            node: 10
+            npm: 6
     runs-on: ${{ matrix.os }}
     timeout-minutes: 5
     steps:
