@@ -16,6 +16,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - if: github.event_name == 'pull_request'
+        run: echo 'if test'
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Set Env
