@@ -1,17 +1,19 @@
 name: Continuous Integration
 on: [push, pull_request]
 
-defaults:
-  run:
-    shell: python
-    working-directory: /tmp
+env:
+  DEBUG: true
 
 jobs:
   unit-test:
     name: Unit Test
     runs-on: ubuntu-18.04
     timeout-minutes: 5
+    env:
+      DEBUG: true
     steps:
+      - name: Echo Sec
+        run: echo "${{ secrets.TEST }}"
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Set Env
