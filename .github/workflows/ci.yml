@@ -1,5 +1,5 @@
 name: Continuous Integration
-on: push
+on: [push, pull_request]
 
 jobs:
   unit-test:
@@ -10,6 +10,11 @@ jobs:
         uses: actions/checkout@v2.0.0
       - name: Set Env
         run: echo 'ACTIONS_ALLOW_UNSECURE_COMMANDS=true' >> $GITHUB_ENV
+      - name: Docker echo
+        uses: docker://alpine:3.11
+        with:
+          entrypoint: /bin/echo
+          args: Hello, World!
       - name: Set Node.js 12.x
         uses: actions/setup-node@v1.3.0
         with:
