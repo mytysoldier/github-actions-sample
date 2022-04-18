@@ -3,6 +3,7 @@ on: push
 
 jobs:
   unit-test:
+    if: github.ref == 'refs/heads/master'
     name: Unit Test
     strategy:
       fail-fast: true
