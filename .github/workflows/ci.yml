@@ -28,10 +28,16 @@ jobs:
           key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ env.cache-version }}-${{ runner.os }}-node-
-      - name: Install dependencies and test
+      - name: Install dependencies
         run: |
           npm ci
-          npm test
+      - name: Test
+        run: npm test
+      - name: Upload test coverage
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-coverage-${{ matrix.os }}-${{ matrix.node }}
+          path: coverage
   lint:
     name: Lint
     runs-on: ubuntu-18.04
