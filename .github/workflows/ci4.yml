@@ -1,0 +1,8 @@
+name: Repository Dispatch
+on: repository_dispatch
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-18.04
+    steps:
+      - run: echo "${{ toJson(github.event) }}"
